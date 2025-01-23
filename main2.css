@@ -18,11 +18,19 @@ h1 {
   top: 50%;
   left: 0;
   width: 100%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); /* Điều chỉnh lại để chữ căn giữa */
   padding: 0 20px;
   color: #c70012;
 }
 
+/* Media query cho màn hình lớn hơn */
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 60px;
+  }
+}
+
+/* Chỉnh sửa animation cho chữ */
 h1 span {
   display: inline-block;
 }
@@ -34,7 +42,7 @@ h1 span span {
   animation: animate-characters 0.75s var(--index) forwards;
   animation-duration: 4s;
   animation-iteration-count: infinite;
-  opacity: 0;
+  opacity: 1; /* Đảm bảo opacity luôn bằng 1 để chữ luôn hiển thị */
   position: relative;
 }
 
@@ -56,22 +64,10 @@ h1 span span {
   }
 }
 
-/* Tối ưu cho màn hình nhỏ hơn */
+/* Media query cho màn hình nhỏ hơn */
 @media (max-width: 768px) {
   h1 {
-    font-size: 4em; /* Giảm kích thước chữ cho màn hình di động */
-    transform: translateY(-50%); /* Đảm bảo chữ ở giữa màn hình */
+    font-size: 4em; /* Giảm kích thước chữ cho thiết bị di động */
+    transform: translateY(-50%); /* Giữ chữ ở giữa màn hình */
   }
-}
-
-/* Tối ưu cho màn hình lớn hơn */
-@media (min-width: 1200px) {
-  h1 {
-    font-size: 60px; /* Tăng kích thước chữ cho màn hình lớn */
-  }
-}
-
-/* Tùy chọn tạm tắt animation để kiểm tra */
-h1 span span {
-  animation: none;
 }
